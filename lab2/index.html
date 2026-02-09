@@ -1,14 +1,680 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My landing page</title>
-    <!-- CHANGE THESE VALUES -->
+    <title>Endfield Factory Planner — Schematic Calculator</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ADD YOUR CODE HERE -->
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <span class="logo-icon">⚙</span> Endfield Planner
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#testimonials">Community</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          Master Your <span class="highlight">Factory Lines</span>
+        </h1>
+        <p class="hero-subtitle">
+          The ultimate schematic calculator for Arknights: Endfield.
+          Plan recipe trees, calculate optimal building counts, and visualize
+          production flows — all in one place.
+        </p>
+        <div class="hero-cta">
+          <a href="#calculator" class="btn btn-primary">Open Calculator</a>
+          <a href="#features" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">60+</span>
+            <span class="stat-label">Recipes</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Building Types</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Free</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-title">Why Endfield Planner?</h2>
+        <p class="section-subtitle">
+          Stop guessing. Start optimizing. Our calculator handles the complex
+          math so you can focus on building.
+        </p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🌲</div>
+            <h3>Recipe Tree Viewer</h3>
+            <p>See the full production chain for any item — from raw seeds and ores to final products — displayed as an interactive tree.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏭</div>
+            <h3>Building Calculator</h3>
+            <p>Know exactly how many Greenhouses, Smelters, Grinders, Workshops, Mixers, Assemblers, and Labs you need.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>Connection Schema</h3>
+            <p>Get a visual flow diagram showing how buildings should be connected for perfectly balanced production lines.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Max Efficiency</h3>
+            <p>Every calculation targets 100% uptime — no idle machines, no bottlenecks. Ratios keep every belt saturated.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3>60+ Recipes</h3>
+            <p>Complete database covering all crafting chains: batteries, capsules, components, powders, solutions, and more.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Zero Setup</h3>
+            <p>Works right in your browser. No downloads, no accounts, no ads. Just pick an item and get your answer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALCULATOR SHOWCASE ===== -->
+    <section class="calculator" id="calculator">
+      <div class="container">
+        <h2 class="section-title">Factory Schematic Calculator</h2>
+        <p class="section-subtitle">
+          Select an item, set your desired production rate, and let the planner
+          do the rest. Here's an example for HC Valley Battery.
+        </p>
+
+        <!-- Example: static calculator demo -->
+        <div class="calc-demo">
+          <div class="calc-panel">
+            <h3 class="calc-panel-title">📋 Recipe Tree — HC Valley Battery</h3>
+            <div class="tree">
+              <div class="tree-node root">
+                <span class="tree-label">HC Valley Battery</span>
+                <span class="tree-badge assembler">🏭 Assembler</span>
+              </div>
+              <div class="tree-children">
+                <div class="tree-branch">
+                  <div class="tree-node">
+                    <span class="tree-label">LC Valley Battery</span>
+                    <span class="tree-badge assembler">🏭 Assembler</span>
+                  </div>
+                  <div class="tree-children">
+                    <div class="tree-branch">
+                      <div class="tree-node">
+                        <span class="tree-label">SC Valley Battery</span>
+                        <span class="tree-badge assembler">🏭 Assembler</span>
+                      </div>
+                      <div class="tree-children">
+                        <div class="tree-branch">
+                          <div class="tree-node">
+                            <span class="tree-label">Ferrium Component</span>
+                            <span class="tree-badge assembler">🏭 Assembler</span>
+                          </div>
+                        </div>
+                        <div class="tree-branch">
+                          <div class="tree-node">
+                            <span class="tree-label">Dense Ferrium Powder</span>
+                            <span class="tree-badge mixer">🧪 Mixer</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tree-branch">
+                      <div class="tree-node">
+                        <span class="tree-label">Cryston Component</span>
+                        <span class="tree-badge assembler">🏭 Assembler</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-branch">
+                  <div class="tree-node">
+                    <span class="tree-label">Xiranite Component</span>
+                    <span class="tree-badge assembler">🏭 Assembler</span>
+                  </div>
+                </div>
+                <div class="tree-branch">
+                  <div class="tree-node">
+                    <span class="tree-label">Dense Originium Powder</span>
+                    <span class="tree-badge mixer">🧪 Mixer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-panel">
+            <h3 class="calc-panel-title">🏭 Required Buildings</h3>
+            <table class="summary-table">
+              <thead>
+                <tr><th>Building</th><th>Count</th><th>Items</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="bldg-badge assembler">🏭 Assembler</span></td>
+                  <td class="count-cell">5</td>
+                  <td>HC Valley Battery, LC Valley Battery, SC Valley Battery, Ferrium Component, Cryston Component, Xiranite Component</td>
+                </tr>
+                <tr>
+                  <td><span class="bldg-badge mixer">🧪 Mixer</span></td>
+                  <td class="count-cell">2</td>
+                  <td>Dense Ferrium Powder, Dense Originium Powder</td>
+                </tr>
+                <tr>
+                  <td><span class="bldg-badge workshop">🔧 Workshop</span></td>
+                  <td class="count-cell">5</td>
+                  <td>Ferrium Part, Ferrium Bottle, Cryston Part, Cryston Bottle, Cryston Fiber</td>
+                </tr>
+                <tr>
+                  <td><span class="bldg-badge grinder">⚙️ Grinder</span></td>
+                  <td class="count-cell">3</td>
+                  <td>Ferrium Powder, Originium Powder, Cryston Powder</td>
+                </tr>
+                <tr>
+                  <td><span class="bldg-badge smelter">🔥 Smelter</span></td>
+                  <td class="count-cell">1</td>
+                  <td>Liquid Xiranite</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr><td><strong>Total</strong></td><td class="count-cell"><strong>16</strong></td><td></td></tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="calc-panel full-width">
+            <h3 class="calc-panel-title">🔗 Connection Schema</h3>
+            <div class="schema-flow">
+              <div class="schema-row">
+                <div class="schema-inputs">
+                  <div class="schema-item raw">Ferrium <span class="qty">×2</span></div>
+                  <div class="schema-item raw">Origocrust <span class="qty">×1</span></div>
+                </div>
+                <div class="schema-arrow">→</div>
+                <div class="schema-building grinder-bg">
+                  <span class="schema-icon">⚙️</span>
+                  <span>Grinder</span>
+                  <span class="schema-count">×3</span>
+                </div>
+                <div class="schema-arrow">→</div>
+                <div class="schema-outputs">
+                  <div class="schema-item">Ferrium Powder</div>
+                  <div class="schema-item">Originium Powder</div>
+                  <div class="schema-item">Cryston Powder</div>
+                </div>
+              </div>
+
+              <div class="schema-row">
+                <div class="schema-inputs">
+                  <div class="schema-item">Ferrium Powder</div>
+                  <div class="schema-item">Originium Powder</div>
+                </div>
+                <div class="schema-arrow">→</div>
+                <div class="schema-building mixer-bg">
+                  <span class="schema-icon">🧪</span>
+                  <span>Mixer</span>
+                  <span class="schema-count">×2</span>
+                </div>
+                <div class="schema-arrow">→</div>
+                <div class="schema-outputs">
+                  <div class="schema-item">Dense Ferrium Powder</div>
+                  <div class="schema-item">Dense Originium Powder</div>
+                </div>
+              </div>
+
+              <div class="schema-row">
+                <div class="schema-inputs">
+                  <div class="schema-item">Ferrium Part</div>
+                  <div class="schema-item">Ferrium Bottle</div>
+                  <div class="schema-item">Cryston Part</div>
+                  <div class="schema-item">Cryston Bottle</div>
+                  <div class="schema-item">Cryston Fiber</div>
+                </div>
+                <div class="schema-arrow">→</div>
+                <div class="schema-building assembler-bg">
+                  <span class="schema-icon">🏭</span>
+                  <span>Assembler</span>
+                  <span class="schema-count">×5</span>
+                </div>
+                <div class="schema-arrow">→</div>
+                <div class="schema-outputs">
+                  <div class="schema-item highlight-item">HC Valley Battery</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipe database preview -->
+        <h3 class="recipe-db-title">Complete Recipe Database</h3>
+        <div class="recipe-grid">
+          <div class="recipe-category">
+            <h4>🌱 Greenhouse</h4>
+            <ul>
+              <li>Aketine</li><li>Buckflower</li><li>Citrome</li>
+              <li>Jincao</li><li>Sandleaf</li><li>Yazhen</li><li>Bumper-Rich</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>⚙️ Grinder</h4>
+            <ul>
+              <li>Ferrium Powder</li><li>Originium Powder</li><li>Origocrust Powder</li>
+              <li>Carbon Powder</li><li>Aketine Powder</li><li>Buckflower Powder</li>
+              <li>Citrome Powder</li><li>Jincao Powder</li><li>Sandleaf Powder</li>
+              <li>Yazhen Powder</li><li>Amethyst Powder</li><li>Cryston Powder</li>
+              <li>Ground Buckflower Powder</li><li>Ground Citrome Powder</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>🔥 Smelter</h4>
+            <ul>
+              <li>Steel</li><li>Liquid Xiranite</li><li>Stabilized Carbon</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>🧪 Mixer</h4>
+            <ul>
+              <li>Dense Ferrium Powder</li><li>Dense Originium Powder</li>
+              <li>Dense Carbon Powder</li><li>Dense Origocrust Powder</li>
+              <li>Jincao Solution</li><li>Yazhen Solution</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>🔧 Workshop</h4>
+            <ul>
+              <li>Ferrium Part</li><li>Steel Part</li><li>Amethyst Part</li><li>Cryston Part</li>
+              <li>Ferrium Bottle</li><li>Steel Bottle</li><li>Amethyst Bottle</li><li>Cryston Bottle</li>
+              <li>Amethyst Fiber</li><li>Cryston Fiber</li><li>Packed Origocrust</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>🏭 Assembler</h4>
+            <ul>
+              <li>Ferrium Component</li><li>Amethyst Component</li><li>Cryston Component</li>
+              <li>Xiranite Component</li><li>SC Valley Battery</li><li>LC Valley Battery</li>
+              <li>LC Wuling Battery</li><li>HC Valley Battery</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>⚗️ Chemical Lab</h4>
+            <ul>
+              <li>Buck Capsule [A]</li><li>Buck Capsule [B]</li><li>Buck Capsule [C]</li>
+              <li>Canned Citrome [A]</li><li>Canned Citrome [B]</li><li>Canned Citrome [C]</li>
+              <li>Jincao Drink</li><li>Yazhen Syringe [C]</li><li>Industrial Explosive</li>
+            </ul>
+          </div>
+          <div class="recipe-category">
+            <h4>🪨 Raw Materials</h4>
+            <ul>
+              <li>Ferrium</li><li>Xiranite</li><li>Origocrust</li><li>Carbon</li>
+              <li>Aketine Seed</li><li>Amber Rice Seed</li><li>Buckflower Seed</li>
+              <li>Citrome Seed</li><li>Jincao Seed</li><li>Redjade Ginseng Seed</li>
+              <li>Reed Rye Seed</li><li>Sandleaf Seed</li><li>Tartpepper Seed</li>
+              <li>Yazhen Seed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS / SOCIAL PROOF ===== -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Trusted by the Community</h2>
+        <p class="section-subtitle">
+          Hear from Doctors who've optimized their factory lines with our planner.
+        </p>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I was spending hours trying to figure out ratios for HC Valley Batteries.
+              This tool calculated everything in seconds. My factory runs at 100% now."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">DK</div>
+              <div>
+                <div class="author-name">DoctorKnight</div>
+                <div class="author-role">Endfield Beta Tester</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The connection schema feature is incredible. I just follow
+              the diagram and my production lines are perfectly balanced every time."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AL</div>
+              <div>
+                <div class="author-name">AmiyaLover42</div>
+                <div class="author-role">Factory Enthusiast</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Coming from Factorio, I needed a tool like this for Endfield.
+              The recipe tree view feels just like home. Absolutely essential."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">FG</div>
+              <div>
+                <div class="author-name">FactorioGuru</div>
+                <div class="author-role">Automation Veteran</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-bar">
+          <div class="trust-item">
+            <span class="trust-number">2,400+</span>
+            <span class="trust-label">Active Users</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">15,000+</span>
+            <span class="trust-label">Calculations Made</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">4.9/5</span>
+            <span class="trust-label">User Rating</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">60+</span>
+            <span class="trust-label">Recipes Supported</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="team" id="team">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          Built by an Endfield player, for Endfield players. Passionate about
+          factory optimization and automation.
+        </p>
+
+        <div class="team-grid solo">
+          <div class="team-card">
+            <div class="team-avatar">
+              <span class="team-initials">LS</span>
+            </div>
+            <h3 class="team-name">Luchian Sava</h3>
+            <p class="team-role">Creator &amp; Developer</p>
+            <p class="team-bio">Designed, built, and maintains the entire Endfield Factory Planner — from the recipe database and calculation engine to the UI and deployment. Endfield and Factorio enthusiast.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Simple Pricing</h2>
+        <p class="section-subtitle">
+          Start for free, upgrade when you need more. No hidden fees.
+        </p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3 class="pricing-tier">Free</h3>
+            <div class="pricing-price">
+              <span class="price-amount">$0</span>
+              <span class="price-period">/ forever</span>
+            </div>
+            <ul class="pricing-features">
+              <li class="included">✓ All 60+ recipes</li>
+              <li class="included">✓ Recipe tree viewer</li>
+              <li class="included">✓ Building calculator</li>
+              <li class="included">✓ Connection schema</li>
+              <li class="excluded">✗ Save/load layouts</li>
+              <li class="excluded">✗ Export to image</li>
+              <li class="excluded">✗ Priority support</li>
+            </ul>
+            <a href="#calculator" class="btn btn-outline pricing-btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <h3 class="pricing-tier">Pro</h3>
+            <div class="pricing-price">
+              <span class="price-amount">$5</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <ul class="pricing-features">
+              <li class="included">✓ Everything in Free</li>
+              <li class="included">✓ Save/load layouts</li>
+              <li class="included">✓ Export to PNG/SVG</li>
+              <li class="included">✓ Multi-product chains</li>
+              <li class="included">✓ Priority support</li>
+              <li class="excluded">✗ Team collaboration</li>
+              <li class="excluded">✗ API access</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary pricing-btn">Upgrade to Pro</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3 class="pricing-tier">Team</h3>
+            <div class="pricing-price">
+              <span class="price-amount">$12</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <ul class="pricing-features">
+              <li class="included">✓ Everything in Pro</li>
+              <li class="included">✓ Team collaboration</li>
+              <li class="included">✓ Shared layouts</li>
+              <li class="included">✓ API access</li>
+              <li class="included">✓ Custom branding</li>
+              <li class="included">✓ Dedicated support</li>
+              <li class="included">✓ Early access to features</li>
+            </ul>
+            <a href="#contact" class="btn btn-orange pricing-btn">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Got questions? We've got answers. If you don't find what you're looking
+          for, reach out through our contact form.
+        </p>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">What is Endfield Factory Planner?</summary>
+            <div class="faq-answer">
+              <p>It's a free web-based tool that calculates optimal factory layouts for Arknights: Endfield. You select a target item, specify your desired production rate, and it shows you the complete recipe tree, required buildings, and how to connect them.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How accurate are the calculations?</summary>
+            <div class="faq-answer">
+              <p>All recipes and production times are sourced directly from the game data. The calculator computes exact ratios to ensure 100% efficiency with zero idle time. Building counts are rounded up to give you the minimum whole buildings needed.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is this similar to Factorio's production planner?</summary>
+            <div class="faq-answer">
+              <p>Yes! Arknights: Endfield shares many factory mechanics with Factorio. If you've used tools like Factorio Calculator or Kirk McDonald's planner, you'll feel right at home. We've adapted the concept specifically for Endfield's recipe chains.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What buildings are supported?</summary>
+            <div class="faq-answer">
+              <p>We support all 7 production building types: Greenhouse, Grinder, Smelter, Workshop, Mixer, Assembler, and Chemical Lab. Each building has its own production speed and recipe set built into our database.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Will you update recipes for new game patches?</summary>
+            <div class="faq-answer">
+              <p>Absolutely. Our game data specialist monitors every patch and beta update. Recipe changes are typically reflected in our database within 24 hours of a new game version release.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I use this on mobile?</summary>
+            <div class="faq-answer">
+              <p>Yes! The entire site is fully responsive. The calculator, recipe trees, and connection schemas all adapt to smaller screens so you can plan on the go.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is there a way to save my calculations?</summary>
+            <div class="faq-answer">
+              <p>The free tier shows calculations in real-time but doesn't persist them. With the Pro plan, you can save and load layouts, and even export your schemas as PNG or SVG images.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">
+          Have a question, feature request, or just want to say hi?
+          We'd love to hear from you.
+        </p>
+
+        <div class="contact-grid">
+          <form class="contact-form" action="#" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option value="">Select a topic</option>
+                <option value="bug">Bug Report</option>
+                <option value="feature">Feature Request</option>
+                <option value="recipe">Missing Recipe</option>
+                <option value="pricing">Pricing Question</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell us what's on your mind..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+
+          <div class="contact-info">
+            <div class="contact-card">
+              <h4>📧 Email</h4>
+              <p>support@endfieldplanner.com</p>
+            </div>
+            <div class="contact-card">
+              <h4>💬 Discord</h4>
+              <p>Join our community server for live help and discussions.</p>
+              <a href="#" class="btn btn-outline contact-btn">Join Discord</a>
+            </div>
+            <div class="contact-card">
+              <h4>🐛 Bug Reports</h4>
+              <p>Found something wrong? Open an issue on our GitHub repo.</p>
+              <a href="#" class="btn btn-outline contact-btn">GitHub Issues</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a href="#" class="footer-logo">⚙ Endfield Planner</a>
+            <p>The ultimate factory schematic calculator for Arknights: Endfield. Plan, optimize, and build.</p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#calculator">Calculator</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#testimonials">Community</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Endfield Factory Planner. Not affiliated with Hypergryph.</p>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
